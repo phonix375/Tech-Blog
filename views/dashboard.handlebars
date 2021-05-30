@@ -1,0 +1,35 @@
+<section>
+<div class="container-fluid">
+<form class="new-post-form">
+  <h2>Your Posts</h2>
+  <div class="form-group">
+    <h3 for="exampleFormControlInput1"><h3>Title</h3></label>
+    <input type="text" class="form-control" id="post-title" placeholder="Title" name="post-title">
+  </div>
+
+  <div class="form-group">
+    <label for="post"><h3>Your post</h3></label>
+    <textarea class="form-control" id="post_content" rows="5" name="post-content"></textarea>
+  </div>
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary" >submit</button>
+  </div>
+</form>
+</div>
+
+{{#if posts.length}}
+<section>
+  
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+
+<script src="/javascript/add-post.js"></script>

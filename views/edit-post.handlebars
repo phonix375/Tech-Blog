@@ -1,0 +1,48 @@
+<article class="container-fluid">
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+
+ <h2>Your Posts</h2>
+  <div class="form-group">
+    <h3 for="exampleFormControlInput1"><h3>Title</h3></label>
+    <input type="text" class="form-control" id="post-title"  name="post-title" value="{{post.title}}">
+  </div>
+
+  <div class="form-group">
+    <label for="post"><h3>Your post</h3></label>
+    <textarea class="form-control" id="post_content" rows="5" name="post-content" >{{post.post_content}}</textarea>
+  </div>
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary" >submit</button>
+  <button type="button" class="btn btn-secondary delete-post-btn">Delete post</button>
+  </div>
+
+</form>
+
+<form class="comment-form">
+  <div class="form-group">
+    <textarea class="form-control" name="comment-body" rows="3"></textarea>
+
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">add comment</button>
+  </div>
+</form>
+
+<section>
+<div class="container-fluid">
+<form class="new-post-form">
+ 
+</div>
+
+
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
